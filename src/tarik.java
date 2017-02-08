@@ -27,7 +27,7 @@ public class tarik {
                 JOptionPane.showMessageDialog(null, "Saldo minimal harus Rp 50000. Segera lakukan penyetoran untuk menghindari penutupan akun.", "Caution", 2);
         }
     }
-    public int getSaldo() {
+    public int getsaldo() {
         return saldo;
     }
 }

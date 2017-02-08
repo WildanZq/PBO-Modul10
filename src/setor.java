@@ -22,7 +22,7 @@ public class setor {
             JOptionPane.showMessageDialog(null, "Saldo Anda saat ini " + saldo);
         }
     }
-    public int getSaldo() {
+    public int getsaldo() {
         return saldo;
     }
 }
