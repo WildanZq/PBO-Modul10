@@ -105,9 +105,11 @@ public class BankHome extends javax.swing.JFrame {
         
         if (huruf) {
             JOptionPane.showMessageDialog(null, "Harap isi dengan benar", "Alert", JOptionPane.ERROR_MESSAGE);
+        } else {
             tarik = Integer.parseInt(trk);
             saldo = Integer.parseInt(jTextField1.getText());
         }
+        
         if(tarik % 100 != 0) {
             JOptionPane.showMessageDialog(null, "Mesin ATM tidak menerima uang koin\nSilakan ulangi lagi", "Transaksi Gagal", JOptionPane.ERROR_MESSAGE);
         } else if(tarik > saldo) {
@@ -127,7 +129,7 @@ public class BankHome extends javax.swing.JFrame {
         String stor = JOptionPane.showInputDialog(null,"Masukkan jumlah nominal","Penyetoran Tunai",3);
         int setor = 0;
         int saldo = 0;
-         boolean huruf = false;
+        boolean huruf = false;
         float num1;
         
         try {
@@ -138,6 +140,7 @@ public class BankHome extends javax.swing.JFrame {
         
         if (huruf) {
             JOptionPane.showMessageDialog(null, "Harap isi dengan benar", "Alert", JOptionPane.ERROR_MESSAGE);
+        } else {
             setor = Integer.parseInt(stor);
             saldo = Integer.parseInt(jTextField1.getText());
         }
