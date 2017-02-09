@@ -92,9 +92,22 @@ public class BankHome extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String trk = JOptionPane.showInputDialog(null,"Masukkan jumlah nominal","Penarikan Tunai",3);
-        int tarik = Integer.parseInt(trk);
-        int saldo = Integer.parseInt(jTextField1.getText());
+        int tarik = 0;
+        int saldo = 0;
+        boolean huruf = false;
+        float num1;
         
+        try {
+            num1 = Float.parseFloat(trk);
+        } catch (NumberFormatException e) {
+            huruf = true;
+        }
+        
+        if (huruf) {
+            JOptionPane.showMessageDialog(null, "Harap isi dengan benar", "Alert", JOptionPane.ERROR_MESSAGE);
+            tarik = Integer.parseInt(trk);
+            saldo = Integer.parseInt(jTextField1.getText());
+        }
         if(tarik % 100 != 0) {
             JOptionPane.showMessageDialog(null, "Mesin ATM tidak menerima uang koin\nSilakan ulangi lagi", "Transaksi Gagal", JOptionPane.ERROR_MESSAGE);
         } else if(tarik > saldo) {
@@ -104,7 +117,7 @@ public class BankHome extends javax.swing.JFrame {
         } else {
             int saldoBaru = saldo - tarik;
             String sBaru = Integer.toString(saldoBaru);
-            
+                
             this.dispose();
             new BankHome(sBaru).setVisible(true);
         }
@@ -112,8 +125,22 @@ public class BankHome extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String stor = JOptionPane.showInputDialog(null,"Masukkan jumlah nominal","Penyetoran Tunai",3);
-        int setor = Integer.parseInt(stor);
-        int saldo = Integer.parseInt(jTextField1.getText());
+        int setor = 0;
+        int saldo = 0;
+         boolean huruf = false;
+        float num1;
+        
+        try {
+            num1 = Float.parseFloat(stor);
+        } catch (NumberFormatException e) {
+            huruf = true;
+        }
+        
+        if (huruf) {
+            JOptionPane.showMessageDialog(null, "Harap isi dengan benar", "Alert", JOptionPane.ERROR_MESSAGE);
+            setor = Integer.parseInt(stor);
+            saldo = Integer.parseInt(jTextField1.getText());
+        }
         
         if(setor % 100 != 0) {
             JOptionPane.showMessageDialog(null, "Mesin ATM tidak menerima uang koin\nSilakan ulangi lagi", "Transaksi Gagal", JOptionPane.ERROR_MESSAGE);

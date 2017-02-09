@@ -76,7 +76,7 @@ public class PinChecker extends javax.swing.JFrame {
             new BankHome(saldo).setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Harap isi PIN dengan benar", "Alert", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Harap isi PIN dengan benar\n123456", "Alert", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
